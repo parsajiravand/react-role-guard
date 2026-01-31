@@ -1,10 +1,10 @@
-# React Role Guard Demo
+# Simple React Role Guard Demo
 
 🎉 **Live Demo Running!** Visit http://localhost:3000
 
 ## What You'll See
 
-This interactive demo showcases all the core features of `react-role-guard`:
+This interactive demo showcases all the core features of `simple-react-role-guard`:
 
 ### 👤 **User Switching**
 - **Admin**: Full access (`*` wildcard permission)
@@ -69,7 +69,7 @@ npm run demo
 # Visit http://localhost:3000
 ```
 
-The demo proves that `react-role-guard` works perfectly for:
+The demo proves that `simple-react-role-guard` works perfectly for:
 - ✅ Declarative role/permission checks
 - ✅ Feature flag management
 - ✅ Dynamic user switching

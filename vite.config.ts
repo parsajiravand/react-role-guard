@@ -13,9 +13,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'ReactRoleGuard',
+      name: 'SimpleReactRoleGuard',
       formats: ['es', 'cjs'],
-      fileName: (format) => `react-role-guard.${format === 'es' ? 'js' : 'umd.cjs'}`
+      fileName: (format) => `simple-react-role-guard.${format === 'es' ? 'js' : 'umd.cjs'}`
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
