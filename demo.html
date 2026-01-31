@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Role Guard Demo</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+        }
+        .success {
+            background: #e8f5e8;
+            border-color: #4caf50;
+            color: #2e7d32;
+        }
+        .error {
+            background: #ffebee;
+            border-color: #f44336;
+            color: #c62828;
+        }
+        .warning {
+            background: #fff3e0;
+            border-color: #ff9800;
+            color: #e65100;
+        }
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+        .role-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 2px;
+        }
+        .admin { background: #e8f5e8; color: #2e7d32; }
+        .editor { background: #e3f2fd; color: #1565c0; }
+        .viewer { background: #f3e5f5; color: #6a1b9a; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="module">
+        import { RoleGuardProvider, Can, useCan, Feature } from './dist/react-role-guard.js';
+
+        // Demo app state
+        let currentUser = {
+            roles: ['editor'],
+            permissions: ['post:create', 'post:read', 'user:read']
+        };
+
+        let features = {
+            newDashboard: true,
+            aiSearch: false
+        };
+
+        // React component for the demo
+        function DemoApp() {
+            const [userState, setUserState] = React.useState(currentUser);
+            const [featureState, setFeatureState] = React.useState(features);
+
+            const canEditPosts = useCan('post:create');
+            const isAdmin = useCan({ role: 'admin' });
+            const canManageUsers = useCan({
+                permissions: ['user:create', 'user:delete'],
+                match: 'any'
+            });
+
+            const switchUser = (newUser) => {
+                currentUser = newUser;
+                setUserState(newUser);
+            };
+
+            const toggleFeature = (featureName) => {
+                features[featureName] = !features[featureName];
+                setFeatureState({...features});
+            };
+
+            return React.createElement('div', { className: 'container' },
+                React.createElement('h1', null, '🔐 React Role Guard Demo'),
+
+                // User Switcher
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '👤 Current User'),
+                    React.createElement('p', null,
+                        'Roles: ',
+                        userState.roles.map(role =>
+                            React.createElement('span', {
+                                key: role,
+                                className: `role-badge ${role}`
+                            }, role)
+                        )
+                    ),
+                    React.createElement('p', null, `Permissions: ${userState.permissions.join(', ')}`),
+                    React.createElement('div', null,
+                        React.createElement('button', { onClick: () => switchUser({
+                            roles: ['admin'],
+                            permissions: ['*']
+                        })}, 'Switch to Admin'),
+                        React.createElement('button', { onClick: () => switchUser({
+                            roles: ['editor'],
+                            permissions: ['post:*', 'user:read']
+                        })}, 'Switch to Editor'),
+                        React.createElement('button', { onClick: () => switchUser({
+                            roles: ['viewer'],
+                            permissions: ['post:read']
+                        })}, 'Switch to Viewer')
+                    )
+                ),
+
+                // Feature Flags
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '🚩 Feature Flags'),
+                    React.createElement('div', null,
+                        React.createElement('label', null,
+                            React.createElement('input', {
+                                type: 'checkbox',
+                                checked: featureState.newDashboard,
+                                onChange: () => toggleFeature('newDashboard')
+                            }),
+                            ' New Dashboard'
+                        )
+                    ),
+                    React.createElement('div', null,
+                        React.createElement('label', null,
+                            React.createElement('input', {
+                                type: 'checkbox',
+                                checked: featureState.aiSearch,
+                                onChange: () => toggleFeature('aiSearch')
+                            }),
+                            ' AI Search'
+                        )
+                    )
+                ),
+
+                // Role-based Access Control
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '🔒 Role-Based Access Control'),
+                    React.createElement(Can, {
+                        role: 'admin',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ Admin Panel - Only admins can see this!'
+                        ),
+                        fallback: React.createElement('div', { className: 'error' },
+                            '❌ Admin Panel - Access denied'
+                        )
+                    }),
+                    React.createElement(Can, {
+                        role: 'editor',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ Editor Tools - Only editors can see this!'
+                        ),
+                        fallback: React.createElement('div', { className: 'warning' },
+                            '⚠️ Editor Tools - Access denied'
+                        )
+                    })
+                ),
+
+                // Permission-based Access Control
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '🔑 Permission-Based Access Control'),
+                    React.createElement(Can, {
+                        permission: 'post:create',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ Create Post Button - Requires post:create permission'
+                        ),
+                        fallback: React.createElement('div', { className: 'error' },
+                            '❌ Create Post Button - Permission denied'
+                        )
+                    }),
+                    React.createElement(Can, {
+                        permissions: ['user:create', 'user:delete'],
+                        match: 'any',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ User Management - Requires user:create OR user:delete'
+                        ),
+                        fallback: React.createElement('div', { className: 'error' },
+                            '❌ User Management - Permission denied'
+                        )
+                    })
+                ),
+
+                // Feature Flags Demo
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '🚀 Feature Flags'),
+                    React.createElement(Feature, {
+                        name: 'newDashboard',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ New Dashboard v2.0 - Feature enabled!'
+                        ),
+                        fallback: React.createElement('div', { className: 'warning' },
+                            '⚠️ New Dashboard v2.0 - Feature disabled'
+                        )
+                    }),
+                    React.createElement(Feature, {
+                        name: 'aiSearch',
+                        children: React.createElement('div', { className: 'success' },
+                            '✅ AI Search - Feature enabled!'
+                        ),
+                        fallback: React.createElement('div', { className: 'warning' },
+                            '⚠️ AI Search - Feature disabled'
+                        )
+                    })
+                ),
+
+                // Hook Usage
+                React.createElement('div', { className: 'section' },
+                    React.createElement('h3', null, '🎣 useCan Hook Results'),
+                    React.createElement('div', null, `canEditPosts: ${canEditPosts ? '✅' : '❌'}`),
+                    React.createElement('div', null, `isAdmin: ${isAdmin ? '✅' : '❌'}`),
+                    React.createElement('div', null, `canManageUsers: ${canManageUsers ? '✅' : '❌'}`)
+                )
+            );
+        }
+
+        // Role config for the demo
+        const config = {
+            roles: {
+                admin: ['*'],
+                editor: ['post:*', 'user:read'],
+                viewer: ['post:read']
+            },
+            features: features
+        };
+
+        // Render the app
+        function App() {
+            return React.createElement(RoleGuardProvider, {
+                user: currentUser,
+                config: config
+            },
+                React.createElement(DemoApp, null)
+            );
+        }
+
+        // Mount the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
