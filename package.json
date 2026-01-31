@@ -1,0 +1,65 @@
+{
+  "name": "react-role-guard",
+  "version": "1.0.0",
+  "description": "Declarative role & permission guards for React apps",
+  "keywords": [
+    "react",
+    "auth",
+    "authorization",
+    "roles",
+    "permissions",
+    "rbac",
+    "acl",
+    "access-control",
+    "security",
+    "typescript"
+  ],
+  "author": "Parsa Jiravand",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parsajiravand/react-role-guard.git"
+  },
+  "homepage": "https://github.com/parsajiravand/react-role-guard#readme",
+  "bugs": {
+    "url": "https://github.com/parsajiravand/react-role-guard/issues"
+  },
+  "main": "./dist/react-role-guard.umd.cjs",
+  "module": "./dist/react-role-guard.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-role-guard.js",
+      "require": "./dist/react-role-guard.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.3",
+    "vitest": "^0.34.3"
+  }
+}
