@@ -2,7 +2,7 @@
 
 > Declarative role & permission guards for React apps
 
-[![npm version](https://badge.fury.io/js/simple-react-role-guard.svg)](https://badge.fury.io/js/simple-react-role-guard)
+[![npm version](https://badge.fury.io/js/advanced-react-role-guard.svg)](https://badge.fury.io/js/advanced-react-role-guard)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
 Centralize **roles, permissions, and feature access** in React apps. No more scattered `if (user.role === "admin")` everywhere.
@@ -21,13 +21,13 @@ Centralize **roles, permissions, and feature access** in React apps. No more sca
 ## 🚀 Installation
 
 ```bash
-npm install simple-react-role-guard
+npm install advanced-react-role-guard
 ```
 
 ## 📖 Quick Start
 
 ```tsx
-import { RoleGuardProvider, Can, useCan } from "simple-react-role-guard";
+import { RoleGuardProvider, Can, useCan } from "advanced-react-role-guard";
 
 function App() {
   return (
@@ -262,7 +262,7 @@ User → Roles → Permissions → Access Decision → UI / Route
 ### Custom Context
 
 ```tsx
-import { useRoleGuardContext } from "simple-react-role-guard";
+import { useRoleGuardContext } from "advanced-react-role-guard";
 
 function CustomComponent() {
   const { hasRole, hasPermission, hasFeature } = useRoleGuardContext();
@@ -283,7 +283,7 @@ import type {
   RoleGuardConfig,
   CanProps,
   UseCanParams
-} from "simple-react-role-guard";
+} from "advanced-react-role-guard";
 
 // Strongly typed usage
 const user: User = {
@@ -305,7 +305,7 @@ const user: User = {
 ### React Router
 
 ```tsx
-import { Guard } from "simple-react-role-guard";
+import { Guard } from "advanced-react-role-guard";
 
 <Route
   path="/admin/users"
@@ -323,7 +323,7 @@ Works seamlessly with Next.js SSR:
 
 ```tsx
 // pages/admin.tsx
-import { Guard } from "simple-react-role-guard";
+import { Guard } from "advanced-react-role-guard";
 
 export default function AdminPage() {
   return (

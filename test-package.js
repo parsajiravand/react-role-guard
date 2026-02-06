@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🧪 Testing simple-react-role-guard package...\n');
+console.log('🧪 Testing advanced-react-role-guard package...\n');
 
 // Check if dist files exist
 const distDir = path.join(__dirname, 'dist');
@@ -10,8 +10,8 @@ const files = fs.readdirSync(distDir);
 
 console.log('📦 Checking dist files:');
 const requiredFiles = [
-  'simple-react-role-guard.js',
-  'simple-react-role-guard.umd.cjs',
+  'advanced-react-role-guard.js',
+  'advanced-react-role-guard.umd.cjs',
   'index.d.ts'
 ];
 

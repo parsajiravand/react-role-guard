@@ -1,5 +1,5 @@
 {
-  "name": "simple-react-role-guard",
+  "name": "advanced-react-role-guard",
   "version": "1.0.0",
   "description": "Declarative role & permission guards for React apps",
   "keywords": [
@@ -24,14 +24,14 @@
   "bugs": {
     "url": "https://github.com/parsajiravand/react-role-guard/issues"
   },
-  "main": "./dist/simple-react-role-guard.umd.cjs",
-  "module": "./dist/simple-react-role-guard.js",
+  "main": "./dist/advanced-react-role-guard.umd.cjs",
+  "module": "./dist/advanced-react-role-guard.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/simple-react-role-guard.js",
-      "require": "./dist/simple-react-role-guard.umd.cjs"
+      "import": "./dist/advanced-react-role-guard.js",
+      "require": "./dist/advanced-react-role-guard.umd.cjs"
     }
   },
   "files": [
