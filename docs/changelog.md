@@ -2,6 +2,10 @@
 
 All notable changes to **advanced-react-role-guard** are documented here. The project follows [Semantic Versioning](https://semver.org/).
 
+## 1.1.1
+
+- **Peer dependencies:** `react` and `react-dom` are now **≥ 19.0.0**. The library is documented and tested as compatible with **React 19 and later** (see README and docs).
+
 ## 1.0.1
 
 - **Fix:** `hasPermission` now evaluates `config.roles` when `user.permissions` is omitted. Previously, a missing `permissions` field caused an early `false` before role-based grants (including `*` and `resource:*` on role lists).

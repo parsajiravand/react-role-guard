@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-role-guard",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Declarative role & permission guards for React apps",
   "keywords": [
     "react",
@@ -12,7 +12,10 @@
     "acl",
     "access-control",
     "security",
-    "typescript"
+    "typescript",
+    "next",
+    "middleware"
+
   ],
   "author": "Parsa Jiravand",
   "license": "MIT",
@@ -41,7 +44,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "demo": "node server.js",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "docs:dev": "vitepress dev docs",
@@ -52,8 +54,8 @@
     "website:preview": "npm run preview --prefix website"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",

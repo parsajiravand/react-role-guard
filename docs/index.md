@@ -23,4 +23,6 @@ features:
     details: Use Can, Guard, Feature, and useCan for consistent checks across UI and routes.
   - title: Wildcards & matching
     details: Support global and prefix wildcards on role permissions, plus any vs all for lists.
+  - title: React 19+
+    details: Peer dependency on React 19 and later—built and tested against current React 19+ releases.
 ---

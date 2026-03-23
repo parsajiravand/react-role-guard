@@ -4,7 +4,7 @@
 
 ## When to use
 
-- App Router (`app/`) or Pages Router with React 18+
+- App Router (`app/`) or Pages Router with React 19+
 - You need SSR-friendly hydration without leaking authorization to the client as **security**
 
 ## Client boundary

@@ -14,7 +14,7 @@ Install **advanced-react-role-guard** and wrap your app with `RoleGuardProvider`
 npm install advanced-react-role-guard
 ```
 
-Peer dependencies: `react` and `react-dom` (≥ 16.8).
+Peer dependencies: `react` and `react-dom` (≥ 19). The library is **developed and tested on React 19 and later**.
 
 ## Minimal setup
 

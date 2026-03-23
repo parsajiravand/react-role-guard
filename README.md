@@ -4,8 +4,11 @@
 
 [![npm version](https://badge.fury.io/js/advanced-react-role-guard.svg)](https://badge.fury.io/js/advanced-react-role-guard)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-%3E%3D19-61dafb.svg)](https://react.dev/)
 
 Centralize **roles, permissions, and feature access** in React apps. No more scattered `if (user.role === "admin")` everywhere.
+
+**Compatibility:** This package targets **React 19 and later** (`react` and `react-dom` ≥ 19). It is developed and tested against current React 19+ releases.
 
 ## ✨ Features
 

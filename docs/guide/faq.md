@@ -23,6 +23,10 @@ They are **separate**; you can combine both in one tree.
 
 Yes, if you **use client components** (or equivalent) where context hooks run, and you avoid hydration mismatches by keeping provider props consistent. **Security is still enforced on the server** — see [Security](/security).
 
+## Which React versions are supported?
+
+**React 19 and later.** Peer dependencies are `react` and `react-dom` ≥ 19.0.0. Development and testing target current React 19+ releases.
+
 ## Will there be breaking changes in v2?
 
 This library follows semver. When v2 is published, expect a migration note in the changelog and, if needed, codemods or a short compatibility table. Until then, follow the public API in the [API reference](/api/role-guard-provider).
