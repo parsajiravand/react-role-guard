@@ -102,3 +102,13 @@ temp/
 
 # Local development
 .local
+
+# Docs
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/.vitepress/node_modules
+docs/.vitepress/package-lock.json
+docs/.vitepress/package.json
+docs/.vitepress/pnpm-lock.yaml
+docs/.vitepress/pnpm-workspace.yaml
+docs/.vitepress/pnpm-workspace.yaml

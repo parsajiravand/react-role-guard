@@ -16,6 +16,8 @@ How **roles**, **direct permissions**, **wildcard** strings, and **`match`** int
 - `roles?: string[]` — role names (e.g. `admin`, `editor`).
 - `permissions?: string[]` — **direct** permission strings from your backend.
 
+If `permissions` is **omitted**, there are no direct grants; checks use **`config.roles`** (and wildcards there) only.
+
 ### Role-to-permission mapping
 
 `config.roles` maps each **role name** to a list of permission strings (and wildcards) that members of that role receive:

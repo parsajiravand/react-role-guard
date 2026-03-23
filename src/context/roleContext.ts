@@ -21,15 +21,15 @@ export const createRoleGuardContextValue = (
   };
 
   const hasPermission = (permission: Permission): boolean => {
-    if (!user?.permissions) return false;
+    if (!user) return false;
 
-    // Check direct permissions
-    if (user.permissions.includes(permission)) return true;
+    // Direct grants on the user object (skip when `permissions` is omitted)
+    if (user.permissions) {
+      if (user.permissions.includes(permission)) return true;
+      if (user.permissions.includes('*')) return true;
+    }
 
-    // Check wildcard permissions
-    if (user.permissions.includes('*')) return true;
-
-    // Check role-based permissions
+    // Role-derived permissions from config.roles
     if (user.roles && config.roles) {
       for (const role of user.roles) {
         const rolePermissions = config.roles[role];

@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-role-guard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Declarative role & permission guards for React apps",
   "keywords": [
     "react",
@@ -46,7 +46,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "website:dev": "npm run dev --prefix website",
+    "website:build": "npm run build --prefix website",
+    "website:preview": "npm run preview --prefix website"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
