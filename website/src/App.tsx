@@ -13,7 +13,8 @@ export function App() {
         <div>
           <h1>advanced-react-role-guard</h1>
           <p className="muted">
-            Interactive playground — imports the library from <code>../src</code> via Vite alias.
+            Interactive playground — uses the published package{' '}
+            <code>advanced-react-role-guard</code> from npm.
           </p>
           <nav className="nav-links" aria-label="External links">
             <a
