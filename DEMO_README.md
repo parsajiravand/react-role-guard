@@ -1,6 +1,8 @@
 # Simple React Role Guard Demo
 
-🎉 **Live Demo Running!** Visit http://localhost:3000
+🎉 **Live demo (production):** [advanced-react-role-guard-website.netlify.app](https://advanced-react-role-guard-website.netlify.app/) · **Documentation:** [advanced-react-role-guard-doc.netlify.app](https://advanced-react-role-guard-doc.netlify.app/)
+
+**Local dev:** visit http://localhost:5173 (or the port Vite prints) after `npm run website:dev` from the repo root.
 
 ## What You'll See
 

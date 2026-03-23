@@ -47,6 +47,30 @@ code {
   font-size: 0.95rem;
 }
 
+.nav-links {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.nav-links a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-sep {
+  color: #94a3b8;
+  user-select: none;
+}
+
 .hint {
   margin: 0 0 1rem;
   font-size: 0.9rem;

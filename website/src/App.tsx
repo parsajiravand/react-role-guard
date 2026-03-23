@@ -15,6 +15,35 @@ export function App() {
           <p className="muted">
             Interactive playground — imports the library from <code>../src</code> via Vite alias.
           </p>
+          <nav className="nav-links" aria-label="External links">
+            <a
+              href="https://advanced-react-role-guard-doc.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Documentation
+            </a>
+            <span className="nav-sep" aria-hidden="true">
+              ·
+            </span>
+            <a
+              href="https://github.com/parsajiravand/react-role-guard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <span className="nav-sep" aria-hidden="true">
+              ·
+            </span>
+            <a
+              href="https://www.npmjs.com/package/advanced-react-role-guard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              npm
+            </a>
+          </nav>
         </div>
         <label className="preset">
           Preset

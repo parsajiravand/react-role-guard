@@ -14,6 +14,10 @@ export default defineConfig({
       { text: 'Security', link: '/security' },
       { text: 'Changelog', link: '/changelog' },
       {
+        text: 'Live demo',
+        link: 'https://advanced-react-role-guard-website.netlify.app/',
+      },
+      {
         text: 'GitHub',
         link: 'https://github.com/parsajiravand/react-role-guard',
       },

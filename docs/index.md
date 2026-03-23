@@ -13,6 +13,9 @@ hero:
       text: API Reference
       link: /api/role-guard-provider
     - theme: alt
+      text: Live demo
+      link: https://advanced-react-role-guard-website.netlify.app/
+    - theme: alt
       text: npm
       link: https://www.npmjs.com/package/advanced-react-role-guard
 

@@ -2,6 +2,8 @@
 
 Install **advanced-react-role-guard** and wrap your app with `RoleGuardProvider`. Use `Can`, `Guard`, `Feature`, or `useCan` wherever you need conditional UI or route gates.
 
+**Hosted documentation:** [advanced-react-role-guard-doc.netlify.app](https://advanced-react-role-guard-doc.netlify.app/) · **Live demo:** [advanced-react-role-guard-website.netlify.app](https://advanced-react-role-guard-website.netlify.app/)
+
 ## When to use
 
 - You want **one place** to define role-to-permission mappings and feature flags.

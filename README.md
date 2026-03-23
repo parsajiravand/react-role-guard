@@ -8,6 +8,13 @@
 
 Centralize **roles, permissions, and feature access** in React apps. No more scattered `if (user.role === "admin")` everywhere.
 
+**Links**
+
+- **Documentation:** [advanced-react-role-guard-doc.netlify.app](https://advanced-react-role-guard-doc.netlify.app/)
+- **Live demo:** [advanced-react-role-guard-website.netlify.app](https://advanced-react-role-guard-website.netlify.app/)
+- **Repository:** [github.com/parsajiravand/react-role-guard](https://github.com/parsajiravand/react-role-guard)
+- **npm:** [advanced-react-role-guard](https://www.npmjs.com/package/advanced-react-role-guard)
+
 **Compatibility:** This package targets **React 19 and later** (`react` and `react-dom` ≥ 19). It is developed and tested against current React 19+ releases.
 
 ## ✨ Features
