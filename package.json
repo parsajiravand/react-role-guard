@@ -43,7 +43,10 @@
     "preview": "vite preview",
     "demo": "node server.js",
     "test": "vitest",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -61,6 +64,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.5.3",
+    "vitepress": "^1.6.4",
     "vitest": "^0.34.3"
   }
 }
