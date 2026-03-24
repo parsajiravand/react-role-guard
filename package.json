@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-role-guard",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Declarative role & permission guards for React apps",
   "keywords": [
     "react",
